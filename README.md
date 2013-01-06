@@ -27,7 +27,7 @@ npm install node-temper1
 ## Usage
 
 ```js
-thermometers=require("..");
+var thermometers=require("temper1");
 
 var devices=thermometers.getDevices();
 
