@@ -48,3 +48,9 @@ thermometers.readTemperature(devices[0], function(err, value) {
 
 ## Sponsors
 node-temper1 is sponsored by http://kwiqly.com
+
+## Copyright
+http://asmuelle.de
+
+## License
+MIT
