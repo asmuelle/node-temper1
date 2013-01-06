@@ -40,6 +40,11 @@ thermometers.readTemperature(devices[0], function(err, value) {
 
 ## To Do
 * read multiple thermometers simultanously
+* add Fahrenheit and Kelvin output
+* add correction function (temper1 thermometers are not very accurate by default)
+
+## Applications that use node-temper1
+* http://nodejsrocks.blogspot.de/2013/01/measure-temperatures-with-usb.html
 
 ## Sponsors
 node-temper1 is sponsored by http://kwiqly.com
