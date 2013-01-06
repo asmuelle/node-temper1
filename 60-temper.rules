@@ -1,0 +1,2 @@
+# TEMPer1 USB thermometer
+ATTR{idVendor}=="0c45", ATTR{idProduct}=="7401", OWNER="root", GROUP="temper", MODE="0660" 
