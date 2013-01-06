@@ -10,7 +10,7 @@ A node module to measure temperatures with a temper1 usb thermometer from http:/
 * git
 
 ### Install module
-npm install node-temper1
+npm install temper1
 
 ### Accessing thermometers as non-root
 
