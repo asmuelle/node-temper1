@@ -1,0 +1,17 @@
+{
+  "author": "Andreas Müller <andreas@kwiqly.com> (http://asmuelle.de/)",
+  "name": "temper1",
+  "description": "Measure temperatures with temper1 usb thermometers.",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "url": "https://github.com/asmuelle/node-temper1"
+  },
+  "main": "./index",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {"node-hid":"0.1.1"}
+}
