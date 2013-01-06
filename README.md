@@ -24,3 +24,6 @@ thermometers.readTemperature(devices[0], function(err, value) {
 
 ## To Do
 * read multiple thermometers simultanously
+
+## Sponsors
+node-temper1 is sponsored by http://kwiqly.com
