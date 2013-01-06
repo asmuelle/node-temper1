@@ -8,6 +8,7 @@ A node module to measure temperatures with a temper1 usb thermometer from http:/
 * node.js v0.8
 * libudev-dev (Linux only)
 * git
+
 ### Install module
 npm install node-temper1
 
