@@ -1,6 +1,6 @@
 # node-temper1
 
-A node module to measure temperatures with a temper1 usb thermometer from http://pcsensors.com. Supports multiple thermometers attached.
+A node module to measure temperatures with a temper1 usb thermometer from http://pcsensor.com. Supports multiple thermometers attached.
 ## Installation
 ### Prerequisites:
 
