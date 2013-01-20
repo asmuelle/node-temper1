@@ -6,7 +6,12 @@ exports.readTemperatures=function(devices) {
 exports.getDevices=function() {
  var devices=HID.devices();
  var list=[];
- devices.forEach(function(item) {if(item.vendorId===3141 && item.interface===1) list.push(item.path);});
+ devices.forEach(function(item) {
+   if(item.product==="TEMPer1V1.2" && 
+      item.vendorId===3141 && 
+      item.interface===1){  list.push(item.path);
+  }
+ });
  return list;
 }
 
