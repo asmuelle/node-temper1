@@ -1,4 +1,4 @@
-var HID = require('HID');
+var HID = require('node-hid');
 var readCommand=[0x01, 0x80, 0x33, 0x01, 0x00, 0x00, 0x00, 0x00];
 exports.readTemperatures=function(devices) {
 };
