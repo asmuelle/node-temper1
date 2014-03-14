@@ -7,10 +7,11 @@ A node module to measure temperatures with a temper1 usb thermometer from http:/
 * Mac OS  or Linux (kernel 2.6+) or Windows XP+
 * node.js >=v0.8
 * libudev-dev (Linux only)
+* libusb-1.0-0-dev
 * git (needed by hid-api)
 
 ### Install module
-sudo apt-get install lubudev-dev (Linux only)
+sudo apt-get install libudev-dev libusb-1.0-0-dev (Linux only)
 npm install temper1
 
 ### Accessing thermometers as non-root
