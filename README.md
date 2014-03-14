@@ -11,8 +11,8 @@ A node module to measure temperatures with a temper1 usb thermometer from http:/
 * git (needed by hid-api)
 
 ### Install module
-sudo apt-get install libudev-dev libusb-1.0-0-dev (Linux only)
-npm install temper1
+* sudo apt-get install libudev-dev libusb-1.0-0-dev (Linux only)
+* npm install temper1
 
 ### Accessing thermometers as non-root
 
