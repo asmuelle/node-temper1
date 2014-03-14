@@ -7,7 +7,7 @@ exports.getDevices=function() {
  var devices=HID.devices();
  var list=[];
  devices.forEach(function(item) {
-   if(item.product==="TEMPer1V1.2" && 
+   if(item.product.match("TEMPer1V1") && 
       item.vendorId===3141 && 
       item.interface===1){  list.push(item.path);
   }
