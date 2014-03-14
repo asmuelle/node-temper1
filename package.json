@@ -5,9 +5,12 @@
    "contributors": [ 
     {
       "name": "Sebastian Janzen"
+    },
+    {
+      "name": "R.J. Steinert"
     } 
   ],
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "test": "node test/test.js"
   },
