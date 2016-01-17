@@ -1,13 +1,14 @@
 var HID = require('node-hid');
 var readCommand=[0x01, 0x80, 0x33, 0x01, 0x00, 0x00, 0x00, 0x00];
 exports.readTemperatures=function(devices) {
+ // not implemented
 };
 
 exports.getDevices=function() {
  var devices=HID.devices();
  var list=[];
  devices.forEach(function(item) {
-   if(item.product.match("TEMPer1V1") && 
+   if( // item.product.match("TEMPer1V1") && // match any TEMPer products by vendorId
       item.vendorId===3141 && 
       item.interface===1){  list.push(item.path);
   }
@@ -30,11 +31,22 @@ exports.readTemperature=function(path, callback, converter){
  });
 }
 
-exports.toDegreeCelcius=function(hiByte, loByte) {
- var sign = hiByte & (1 << 7);
- var temp = ((hiByte & 0x7F) << 8) | loByte;
- if (sign) {
-    temp = -temp;
- }
- return temp * 125.0 / 32000.0;
+exports.toDegreeCelsius = function(hiByte, loByte) {
+    if ((hiByte & 128) == 128) {
+        return -((256-hiByte) + (1 + ~(loByte >> 4)) / 16.0);
+    }
+    return hiByte + ((loByte >> 4) / 16.0);
+}
+
+// 'Celsius' is misspelled, but left here so as not to break existing code
+exports.toDegreeCelcius = function(hiByte, loByte) {
+    return exports.toDegreeCelsius(hiByte, loByte);
+}
+
+exports.toDegreeFahrenheit = function(hiByte, loByte) {
+    return exports.celsiusToFahrenheit(exports.toDegreeCelcius(hiByte, loByte));
+}
+
+exports.celsiusToFahrenheit = function(c) {
+    return (c * 1.8) + 32.0;
 }

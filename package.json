@@ -21,5 +21,5 @@
   "engines": {
     "node": "*"
   },
-  "dependencies": {"node-hid":"~0.2.2"}
+  "dependencies": {"node-hid":"~0.5.1"}
 }
