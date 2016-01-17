@@ -18,20 +18,24 @@ exports.getDevices=function() {
 
 exports.readTemperature=function(path, callback, converter){
  if(!converter) {
-  converter=exports.toDegreeCelcius;
+  converter=exports.toDegreeCelsius;
  }
  var device = new HID.HID(path);
  device.write(readCommand);
  device.read(function(err,response){
+   device.close();
    if(err) {
     callback.call(this,err,null); 
    } else {
-    callback.call(this,null, converter(response[2],response[3]));
+    callback.call(this,null, converter(response[2],response[3]), converter(response[4], response[5]));
    }
  });
 }
 
 exports.toDegreeCelsius = function(hiByte, loByte) {
+    if (hiByte == 255 && loByte == 255) {
+        return NaN;
+    }
     if ((hiByte & 128) == 128) {
         return -((256-hiByte) + (1 + ~(loByte >> 4)) / 16.0);
     }
@@ -39,12 +43,12 @@ exports.toDegreeCelsius = function(hiByte, loByte) {
 }
 
 // 'Celsius' is misspelled, but left here so as not to break existing code
-exports.toDegreeCelcius = function(hiByte, loByte) {
-    return exports.toDegreeCelsius(hiByte, loByte);
+exports.toDegreeCelcius = function(hibyte, lobyte) {
+    return exports.toDegreeCelsius(hibyte, lobyte);
 }
 
 exports.toDegreeFahrenheit = function(hiByte, loByte) {
-    return exports.celsiusToFahrenheit(exports.toDegreeCelcius(hiByte, loByte));
+    return exports.celsiusToFahrenheit(exports.toDegreeCelsius(hiByte, loByte));
 }
 
 exports.celsiusToFahrenheit = function(c) {
