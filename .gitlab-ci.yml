@@ -1,0 +1,7 @@
+image: node:4.2.2
+
+ 
+all_tests:
+  script:
+   - npm install
+    
