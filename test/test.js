@@ -1,5 +1,7 @@
-thermometers=require("..");
+console.log("test");
 /*
+thermometers=require("..");
+
 var devices=thermometers.getDevices();
 
 console.log("Devices found:"+devices[0]);
