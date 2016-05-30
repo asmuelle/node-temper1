@@ -1,6 +1,12 @@
 language: node_js
 node_js:
- 
-  - "0.12"
-before_install:  
-  - sudo apt-get install libudev-dev libusb-1.0-0-dev
+- '0.12'
+before_install:
+- sudo apt-get install libudev-dev libusb-1.0-0-dev
+deploy:
+  provider: npm
+  email: andreas@kwiqly.com
+  api_key:
+    secure: bCwWOsqZEdqkrx9EjWCsl+fRbtlAzBAFc4kGXK8c3cwQ9rLPPRvbgFNIplPF4A4WPLwHQ1r0wOVMozsnCpwNAdFoR18NCvuaOO+bwyBACuSo5DzKz7APn0MRe7hiWZuDaMvrCVj63lKDQZdroLUmxzUB2+GShrTbJmA2x7/mT7mGAM62xdJ3D3eU/Z/e0FtIim/1gQlw63hAd6CST1wVNZchHCxTeUhWs22xWDRppY4yKnOhaiiMBR3ImEcEH4MjZC5PpmPPjKQurPyjHO/lZXNh+eUwORx7n1gtjD0H2Vio8ZZn/iMKt6vShzMwhuHDPW3/G5LJhA4bIfQYz1Kj9TCbkQNhbDZrtv0COPlE2GNzT7pEHPfcX9M3Pkjk4JNOfnHNj3cuMwh6ZXfNAmllwTMPdAXbOAAs/qyMLrjRrhl5KlfqUyq/PZx6M0ukhz/Ib0BK+K7zqb+sXdRq7ymjVzmHOC6gSXofY5tti6NM7g6ZDUs/6Klh14O4bkkskg5bDaS5NQGdKlx6WZIT7HAzh6Y+mnhlp5HDLobQIGXUJ6r+r6YWs5rcVSlFlW7l46dqEKXF1uUuHdewcXuL5hK9NSqanxJA6fLjGl2ZwMxtMPbg97hxIlAsyvKITBkTDzQUbEE7ENDwqkqjMDUmbZTshreGn4AiwbcKwLsfUYVBVRY=
+  on:
+    repo: asmuelle/node-temper1
