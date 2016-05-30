@@ -1,5 +1,5 @@
 thermometers=require("..");
-
+/*
 var devices=thermometers.getDevices();
 
 console.log("Devices found:"+devices[0]);
@@ -17,3 +17,4 @@ devices.forEach(function(device) {
     });
 
 });
+*/
