@@ -1,5 +1,9 @@
 # node-temper1
-
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+[![Node.js Version][node-version-image]][node-version-url]
+[![Linux Build][travis-image]][travis-url]
+[![Test Coverage][coveralls-image]][coveralls-url]
 A node module to measure temperatures with a temper1 usb thermometer from http://pcsensor.com. Supports multiple thermometers attached.
 ## Installation
 ### Prerequisites:
