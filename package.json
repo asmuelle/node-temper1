@@ -8,9 +8,10 @@
     },
     {
       "name": "R.J. Steinert"
-    } 
+    },
+    { "name": "Eric McCarthy", "email":"eric@limulus.net"}
   ],
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "test": "node test/test.js"
   },
