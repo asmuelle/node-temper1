@@ -6,11 +6,16 @@ exports.readTemperatures=function(devices) {
 
 exports.getDevices=function() {
  var devices=HID.devices();
+ var expectedInterface = process.platform === 'darwin' ? -1 : 1;
+ var seen={};
  var list=[];
  devices.forEach(function(item) {
    if( // item.product.match("TEMPer1V1") && // match any TEMPer products by vendorId
-      item.vendorId===3141 && 
-      item.interface===1){  list.push(item.path);
+      item.vendorId===3141 &&
+      item.interface===expectedInterface &&
+      !seen[item.path]){
+        list.push(item.path);
+        seen[item.path] = true;
   }
  });
  return list;
