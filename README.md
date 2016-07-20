@@ -53,9 +53,11 @@ thermometers.readTemperature(devices[0], function(err, value) {
 ## Sponsors
   - node-temper1 is sponsored by http://kwiqly.com
 
-## Credits
+## Contributors
 
-  - [Andreas Müller](http://asmuelle.de)
+  - Josh Wyse
+  - Sebastian Janzen
+  - Eric McCarthy
 
 ## License
 
