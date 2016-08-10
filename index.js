@@ -1,5 +1,7 @@
 var HID = require('node-hid');
 var readCommand=[0x01, 0x80, 0x33, 0x01, 0x00, 0x00, 0x00, 0x00];
+var deviceMap={};
+
 exports.readTemperatures=function(devices) {
  // not implemented
 };
@@ -11,9 +13,10 @@ exports.getDevices=function() {
  var list=[];
  devices.forEach(function(item) {
    if( // item.product.match("TEMPer1V1") && // match any TEMPer products by vendorId
-      item.vendorId===3141 &&
-      item.interface===expectedInterface &&
-      !seen[item.path]){
+      item.vendorId===3141 
+      &&item.interface===expectedInterface 
+      &&!seen[item.path]
+     ) {
         list.push(item.path);
         seen[item.path] = true;
   }
@@ -25,7 +28,10 @@ exports.readTemperature=function(path, callback, converter){
  if(!converter) {
   converter=exports.toDegreeCelsius;
  }
- var device = new HID.HID(path);
+ if(!deviceMap[path]) {
+   deviceMap[path]=new HID.HID(path);
+ }
+ var device = deviceMap[path];
  device.write(readCommand);
  device.read(function(err,response){
    device.close();
