@@ -11,7 +11,7 @@
     },
     { "name": "Eric McCarthy", "email":"eric@limulus.net"}
   ],
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "test": "node test/test.js"
   },
