@@ -1,6 +1,5 @@
 var HID = require('node-hid');
 var readCommand=[0x01, 0x80, 0x33, 0x01, 0x00, 0x00, 0x00, 0x00];
-var deviceMap={};
 
 exports.readTemperatures=function(devices) {
  // not implemented
@@ -28,10 +27,8 @@ exports.readTemperature=function(path, callback, converter){
  if(!converter) {
   converter=exports.toDegreeCelsius;
  }
- if(!deviceMap[path]) {
-   deviceMap[path]=new HID.HID(path);
- }
- var device = deviceMap[path];
+
+ var device = new HID.HID(path);;
  device.write(readCommand);
  device.read(function(err,response){
    device.close();
