@@ -2,14 +2,17 @@
   "author": "Andreas Müller <andreas@kwiqly.com> (http://asmuelle.de/)",
   "name": "temper1",
   "description": "Measure temperatures with temper1 usb thermometers.",
-   "contributors": [ 
+  "contributors": [
     {
       "name": "Sebastian Janzen"
     },
     {
       "name": "R.J. Steinert"
     },
-    { "name": "Eric McCarthy", "email":"eric@limulus.net"}
+    {
+      "name": "Eric McCarthy",
+      "email": "eric@limulus.net"
+    }
   ],
   "version": "0.0.9",
   "scripts": {
@@ -22,5 +25,7 @@
   "engines": {
     "node": "*"
   },
-  "dependencies": {"node-hid":"~0.5.1"}
+  "dependencies": {
+    "node-hid": "^0.7.7"
+  }
 }
